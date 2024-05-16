@@ -4,9 +4,13 @@ import dummyFormUrl from "/bpmn-stories/group2/dummy.form?url";
 
 export const Group2: bpmnStory[] = [
   {
-    id: "group2id",
-    title: "Group2 - Title",
-    description: "Group2 - Description",
+    id: "compensation",
+    title: "Group2 - Compensation Commando",
+    description: "Welcome to \"The Compensation Commando,\" where your BPMN expertise will be put to the test.\n" +
+        "\n" +
+        "Dive into a story where the compensation event is a pivotal challenge that can make or break the workflow. Navigate through an intricate process and marvel at its simplicity.\n" +
+        "\n" +
+        "Will you master the art of compensation and restore balance? Test your knowledge, sharpen your skills, and embrace the adventure. Are you ready to take on the challenge?",
     participants: [
       {
         id: "1",
@@ -24,7 +28,7 @@ export const Group2: bpmnStory[] = [
       },
     ],
     difficulty: {
-      bpmn: 1,
+      bpmn: 4,
       dmn: 0,
       forms: 0,
     },
@@ -36,29 +40,25 @@ export const Group2: bpmnStory[] = [
           {
             position: 1,
             type: "narration",
-            text: "This is a BPMN story template for you to work with!",
+            text: "Welcome to the Compensation Commando! Please click the button (>) below to follow the dialogue.",
           },
           {
             position: 2,
             type: "message",
             participant: "1",
-            text: "This text is said by participant number 1. They were chosen to be the protagonist, placing the icon on the right side and speech bubble on the left side.",
+            text: "Hey Wolfgang, my name is Jess. Ready for a challenge? Please have a look at the process on the right.",
           },
           {
             position: 3,
             type: "message",
             participant: "2",
-            text: "This text is said by participant number 2. The icon and speech bubble are reversed.",
+            text: "Hey Jess, nice process. I got it!",
           },
           {
             position: 4,
-            type: "narration",
-            text: "You can use the type narration to add additional context. You can use up to 4 different participants!",
-          },
-          {
-            position: 5,
             type: "question",
-            question: "This is a question?",
+            participant: "1",
+            question: "I'd like you to extent the process. Once a person becomes sick, all the bookings need to be cancelled. How would you model that?",
             answers: [
               {
                 keyword: "q1-incorrect-1",
@@ -71,6 +71,25 @@ export const Group2: bpmnStory[] = [
               {
                 keyword: "q1-correct-1",
                 text: "This is the correct answer.",
+              },
+            ],
+          },
+          {
+            position: 5,
+            type: "question",
+            question: "This is a question?",
+            answers: [
+              {
+                keyword: "q1-incorrect-1",
+                text: "A",
+              },
+              {
+                keyword: "q1-incorrect-2",
+                text: 'B',
+              },
+              {
+                keyword: "q1-correct-1",
+                text: "C",
               },
             ],
           },
