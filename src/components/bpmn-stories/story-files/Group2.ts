@@ -58,104 +58,58 @@ export const Group2: bpmnStory[] = [
             position: 4,
             type: "question",
             participant: "1",
-            question: "I'd like you to extent the process. Once a person becomes sick, all the bookings need to be cancelled. How would you model that?",
+            question: "I'd like you to extend the process. Once a person becomes sick, all the bookings need to be cancelled. How would you model that? Do you know the compensation event?",
             answers: [
               {
-                keyword: "q1-incorrect-1",
-                text: "Each answer has a specific keyword which is used to progress in the story.",
+                keyword: "q1-beginner",
+                text: "Never heard of compensation. What's that?",
               },
               {
-                keyword: "q1-incorrect-2",
-                text: 'The first two answers lead to "bad endings".',
-              },
-              {
-                keyword: "q1-correct-1",
-                text: "This is the correct answer.",
+                keyword: "q1-pro",
+                text: "I'm a compensation pro! How to live without it?",
               },
             ],
           },
+        ],
+      },
+      {
+        conditions: ["q1-beginner"],
+        messages: [
           {
             position: 5,
-            type: "question",
-            question: "This is a question?",
-            answers: [
-              {
-                keyword: "q1-incorrect-1",
-                text: "A",
-              },
-              {
-                keyword: "q1-incorrect-2",
-                text: 'B',
-              },
-              {
-                keyword: "q1-correct-1",
-                text: "C",
-              },
-            ],
+            type: "message",
+            participant: "1",
+            text: "Alright. Then let's see how you would model the process. Please, go ahead :)",
           },
-        ],
-      },
-      {
-        conditions: ["q1-incorrect-1"],
-        messages: [
           {
             position: 6,
+            type: "message",
+            participant: "2",
+            text: "Here's what I came up with. Do you like it?",
+          },
+          {
+            position: 7,
             type: "ending",
             isGoodEnding: false,
-            title: "Wrong Answer",
-            text: "This is an example for a bad ending.",
+            title: "So messy",
+            text: "I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
           },
         ],
       },
       {
-        conditions: ["q1-incorrect-2"],
+        conditions: ["q1-pro"],
         messages: [
           {
-            position: 6,
+            position: 5,
             type: "narration",
             text: "We can also add conversation before our bad ending.",
           },
           {
-            position: 7,
+            position: 6,
             type: "ending",
             isGoodEnding: false,
             title: "Different Title",
             text: "This is another bad ending with a different title.",
-          },
-        ],
-      },
-      {
-        conditions: ["q1-correct-1"],
-        messages: [
-          {
-            position: 6,
-            type: "narration",
-            text: "You can create multiple threads and use keywords to let your story play out the way you want it to!",
-          },
-          {
-            position: 7,
-            type: "message",
-            participant: "1",
-            text: "Displaying BPMN, DMN and Forms has the same thread/keyword system.",
-          },
-          {
-            position: 8,
-            type: "message",
-            participant: "2",
-            text: "But don't make your story too complex! Using multiple threads that depend on different keywords is optional.",
-          },
-          {
-            position: 9,
-            type: "message",
-            participant: "1",
-            text: "We made to the end of our demo story!",
-          },
-          {
-            position: 10,
-            type: "ending",
-            isGoodEnding: true,
-            title: "The End",
-            text: "Have fun creating your own stories!",
           },
         ],
       },
