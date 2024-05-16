@@ -1,4 +1,6 @@
 import tripCompensationUrl from "/bpmn-stories/group2/TripCompensation.bpmn?url";
+import tripCompensationUrl1 from "/bpmn-stories/group2/TripCompensation_1.bpmn?url";
+import tripCompensationUrl2 from "/bpmn-stories/group2/TripCompensation_2.bpmn?url";
 import tripCancelUrl from "/bpmn-stories/group2/TripCancel.bpmn?url";
 import tripUrl from "/bpmn-stories/group2/Trip.bpmn?url";
 
@@ -25,6 +27,13 @@ export const Group2: bpmnStory[] = [
         role: "Student",
         name: "Wolfgang",
         emoji: "🙋🏻‍♂️",
+      },
+      {
+        id: "3",
+        protagonist: false,
+        role: "Another Student",
+        name: "Mary",
+        emoji: "👩‍🦰",
       },
     ],
     difficulty: {
@@ -163,6 +172,30 @@ export const Group2: bpmnStory[] = [
           },
           {
             position: 6,
+            type: "message",
+            participant: "3",
+            text: "Hey guys, that looks interesting! Could you explain in a bit more detail?",
+          },
+          {
+            position: 7,
+            type: "message",
+            participant: "1",
+            text: "Sure! It works as follows:",
+          },
+          {
+            position: 8,
+            type: "message",
+            participant: "1",
+            text: "When the process reaches the throwing Compensation Events, the compensation is started.",
+          },
+          {
+            position: 9,
+            type: "message",
+            participant: "1",
+            text: "The process engines then starts the compensations for catching Compensation Events only if that corresponding activity was executed before.",
+          },
+          {
+            position: 10,
             type: "ending",
             isGoodEnding: true,
             title: "So compact!",
@@ -197,8 +230,17 @@ export const Group2: bpmnStory[] = [
             position: 5,
             fileNames: [tripCompensationUrl],
           },
+          {
+            position: 8,
+            fileNames: [tripCompensationUrl1],
+          },
+          {
+            position: 9,
+            fileNames: [tripCompensationUrl2],
+          },
         ],
       },
+      
     ],
   },
 ];
