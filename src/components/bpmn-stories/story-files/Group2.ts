@@ -123,12 +123,22 @@ export const Group2: bpmnStory[] = [
             position: 1,
             fileNames: [tripUrl],
           },
+        ],
+      },
+      {
+        conditions: ["q1-beginner"],
+        files: [
           {
             position: 6,
             fileNames: [tripCancelUrl],
           },
+        ],
+      },
+      {
+        conditions: ["q1-pro"],
+        files: [
           {
-            position: 8,
+            position: 6,
             fileNames: [tripCompensationUrl],
           },
         ],
