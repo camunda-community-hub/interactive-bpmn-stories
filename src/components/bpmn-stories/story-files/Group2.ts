@@ -1,12 +1,18 @@
-import dummyBpmnUrl from "/bpmn-stories/group2/dummy.bpmn?url";
-import dummyDmnUrl from "/bpmn-stories/group2/dummy.dmn?url";
-import dummyFormUrl from "/bpmn-stories/group2/dummy.form?url";
+import tripCompensationUrl from "/bpmn-stories/group2/TripCompensation.bpmn?url";
+import tripCompensationUrl1 from "/bpmn-stories/group2/TripCompensation_1.bpmn?url";
+import tripCompensationUrl2 from "/bpmn-stories/group2/TripCompensation_2.bpmn?url";
+import tripCancelUrl from "/bpmn-stories/group2/TripCancel.bpmn?url";
+import tripUrl from "/bpmn-stories/group2/Trip.bpmn?url";
 
 export const Group2: bpmnStory[] = [
   {
-    id: "group2id",
-    title: "Group2 - Title",
-    description: "Group2 - Description",
+    id: "compensation",
+    title: "Group2 - Compensation Commando",
+    description: "Welcome to \"The Compensation Commando,\" where your BPMN expertise will be put to the test.\n" +
+        "\n" +
+        "Dive into a story where the compensation event is a pivotal challenge that can make or break the workflow. Navigate through an intricate process and marvel at its simplicity.\n" +
+        "\n" +
+        "Will you master the art of compensation and restore balance? Test your knowledge, sharpen your skills, and embrace the adventure. Are you ready to take on the challenge?",
     participants: [
       {
         id: "1",
@@ -22,9 +28,16 @@ export const Group2: bpmnStory[] = [
         name: "Wolfgang",
         emoji: "🙋🏻‍♂️",
       },
+      {
+        id: "3",
+        protagonist: false,
+        role: "Another Student",
+        name: "Mary",
+        emoji: "👩‍🦰",
+      },
     ],
     difficulty: {
-      bpmn: 1,
+      bpmn: 4,
       dmn: 0,
       forms: 0,
     },
@@ -36,107 +49,157 @@ export const Group2: bpmnStory[] = [
           {
             position: 1,
             type: "narration",
-            text: "This is a BPMN story template for you to work with!",
+            text: "Welcome to the Compensation Commando! Please click the button (>) below to follow the dialogue.",
           },
           {
             position: 2,
             type: "message",
             participant: "1",
-            text: "This text is said by participant number 1. They were chosen to be the protagonist, placing the icon on the right side and speech bubble on the left side.",
+            text: "Hey Wolfgang, my name is Jess. Ready for a challenge? Please have a look at the process on the right.",
           },
           {
             position: 3,
             type: "message",
             participant: "2",
-            text: "This text is said by participant number 2. The icon and speech bubble are reversed.",
+            text: "Hey Jess, nice process. I got it!",
           },
           {
             position: 4,
-            type: "narration",
-            text: "You can use the type narration to add additional context. You can use up to 4 different participants!",
-          },
-          {
-            position: 5,
             type: "question",
-            question: "This is a question?",
+            participant: "1",
+            question: "I'd like you to extend the process. Once a person becomes sick, all the bookings need to be cancelled. How would you model that? Do you know the compensation event?",
             answers: [
               {
-                keyword: "q1-incorrect-1",
-                text: "Each answer has a specific keyword which is used to progress in the story.",
+                keyword: "q1-beginner",
+                text: "Never heard of compensation. What's that?",
               },
               {
-                keyword: "q1-incorrect-2",
-                text: 'The first two answers lead to "bad endings".',
-              },
-              {
-                keyword: "q1-correct-1",
-                text: "This is the correct answer.",
+                keyword: "q1-pro",
+                text: "I'm a compensation pro! How to live without it?",
               },
             ],
           },
         ],
       },
       {
-        conditions: ["q1-incorrect-1"],
+        conditions: ["q1-beginner"],
         messages: [
           {
-            position: 6,
-            type: "ending",
-            isGoodEnding: false,
-            title: "Wrong Answer",
-            text: "This is an example for a bad ending.",
-          },
-        ],
-      },
-      {
-        conditions: ["q1-incorrect-2"],
-        messages: [
-          {
-            position: 6,
-            type: "narration",
-            text: "We can also add conversation before our bad ending.",
+            position: 5,
+            type: "message",
+            participant: "1",
+            text: "Alright. Then let's see how you would model the process. Please, go ahead :)",
           },
           {
-            position: 7,
-            type: "ending",
-            isGoodEnding: false,
-            title: "Different Title",
-            text: "This is another bad ending with a different title.",
-          },
-        ],
-      },
-      {
-        conditions: ["q1-correct-1"],
-        messages: [
-          {
             position: 6,
-            type: "narration",
-            text: "You can create multiple threads and use keywords to let your story play out the way you want it to!",
+            type: "message",
+            participant: "2",
+            text: "Here's what I came up with. Do you like it?",
           },
           {
             position: 7,
             type: "message",
             participant: "1",
-            text: "Displaying BPMN, DMN and Forms has the same thread/keyword system.",
+            text: "Hmm, a good start, but maybe not the best solution.",
+          },
+          {
+            position: 8,
+            type: "question",
+            participant: "1",
+            question: "Could you imagine why?",
+            answers: [
+              {
+                keyword: "q2-wrong1",
+                text: "It has syntatcical BPMN errors",
+              },
+              {
+                keyword: "q2-wrong2",
+                text: "It does not work correctly",
+              },
+              {
+                keyword: "q2-right",
+                text: "It works, but the model is overly complex",
+              },
+            ],
+          },
+          
+        ],
+      },
+      {
+        conditions: ["q2-wrong1"],
+        messages: [
+          {
+            position: 9,
+            type: "ending",
+            isGoodEnding: false,
+            title: "So messy",
+            text: "No, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
+          },
+        ]
+      },
+      {
+        conditions: ["q2-wrong2"],
+        messages: [
+          {
+            position: 9,
+            type: "ending",
+            isGoodEnding: false,
+            title: "So messy",
+            text: "No, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
+          },
+        ]
+      },
+      {
+        conditions: ["q2-right"],
+        messages: [
+          {
+            position: 9,
+            type: "ending",
+            isGoodEnding: true,
+            title: "Not so elegant",
+            text: "Correct, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
+          },
+        ]
+      },
+      {
+        conditions: ["q1-pro"],
+        messages: [
+          {
+            position: 5,
+            type: "message",
+            participant: "2",
+            text: "Here's the updated process model using compensation. Do you love it as much as I do?",
+          },
+          {
+            position: 6,
+            type: "message",
+            participant: "3",
+            text: "Hey guys, that looks interesting! Could you explain in a bit more detail?",
+          },
+          {
+            position: 7,
+            type: "message",
+            participant: "1",
+            text: "Sure! It works as follows:",
           },
           {
             position: 8,
             type: "message",
-            participant: "2",
-            text: "But don't make your story too complex! Using multiple threads that depend on different keywords is optional.",
+            participant: "1",
+            text: "When the process reaches the throwing Compensation Events, the compensation is started.",
           },
           {
             position: 9,
             type: "message",
             participant: "1",
-            text: "We made to the end of our demo story!",
+            text: "The process engines then starts the compensations for catching Compensation Events only if that corresponding activity was executed before.",
           },
           {
             position: 10,
             type: "ending",
             isGoodEnding: true,
-            title: "The End",
-            text: "Have fun creating your own stories!",
+            title: "So compact!",
+            text: "I love the simplicity. Well done! I hope you learned something new :)",
           },
         ],
       },
@@ -147,18 +210,37 @@ export const Group2: bpmnStory[] = [
         files: [
           {
             position: 1,
-            fileNames: [dummyBpmnUrl],
-          },
-          {
-            position: 6,
-            fileNames: [dummyDmnUrl],
-          },
-          {
-            position: 8,
-            fileNames: [dummyFormUrl],
+            fileNames: [tripUrl],
           },
         ],
       },
+      {
+        conditions: ["q1-beginner"],
+        files: [
+          {
+            position: 6,
+            fileNames: [tripCancelUrl],
+          },
+        ],
+      },
+      {
+        conditions: ["q1-pro"],
+        files: [
+          {
+            position: 5,
+            fileNames: [tripCompensationUrl],
+          },
+          {
+            position: 8,
+            fileNames: [tripCompensationUrl1],
+          },
+          {
+            position: 9,
+            fileNames: [tripCompensationUrl2],
+          },
+        ],
+      },
+      
     ],
   },
 ];
