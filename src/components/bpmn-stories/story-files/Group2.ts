@@ -138,7 +138,7 @@ export const Group2: bpmnStory[] = [
         conditions: ["q1-pro"],
         files: [
           {
-            position: 6,
+            position: 5,
             fileNames: [tripCompensationUrl],
           },
         ],
