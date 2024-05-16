@@ -1,8 +1,6 @@
-import dummyBpmnUrl from "/bpmn-stories/group2/dummy.bpmn?url";
-import dummyDmnUrl from "/bpmn-stories/group2/dummy.dmn?url";
-import dummyFormUrl from "/bpmn-stories/group2/dummy.form?url";
 import tripCompensationUrl from "/bpmn-stories/group2/TripCompensation.bpmn?url";
-import tripCancelUrl from "/bpmn-stories/group2/tripCancel.bpmn?url";
+import tripCancelUrl from "/bpmn-stories/group2/TripCancel.bpmn?url";
+import tripUrl from "/bpmn-stories/group2/Trip.bpmn?url";
 
 export const Group2: bpmnStory[] = [
   {
@@ -122,15 +120,15 @@ export const Group2: bpmnStory[] = [
         files: [
           {
             position: 1,
-            fileNames: [tripCompensationUrl],
+            fileNames: [tripUrl],
           },
           {
             position: 6,
-            fileNames: [dummyDmnUrl],
+            fileNames: [tripCancelUrl],
           },
           {
             position: 8,
-            fileNames: [dummyFormUrl],
+            fileNames: [tripCompensationUrl],
           },
         ],
       },
