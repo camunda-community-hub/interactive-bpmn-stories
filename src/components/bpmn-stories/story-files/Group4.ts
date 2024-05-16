@@ -1,30 +1,31 @@
-import dummyBpmnUrl from "/bpmn-stories/group4/dummy.bpmn?url";
-import dummyDmnUrl from "/bpmn-stories/group4/dummy.dmn?url";
-import dummyFormUrl from "/bpmn-stories/group4/dummy.form?url";
+import subProcess1BpmnUrl from "/bpmn-stories/group4/subprocess_1.bpmn?url";
+import subProcess2BpmnUrl from "/bpmn-stories/group4/subprocess_2.bpmn?url";
+import subProcess3BpmnUrl from "/bpmn-stories/group4/subprocess_3.bpmn?url";
+
 
 export const Group4: bpmnStory[] = [
   {
-    id: "group4id",
-    title: "Group4 - Title",
-    description: "Group4 - Description",
+    id: "bpmn_subprocess_stories",
+    title: "BPMN Embedded Subprocesses",
+    description: "This interactive tutorial is an interactive short story version of Camunda Academy's BPMN Subprocesses course - Embedded subprocesses part.",
     participants: [
       {
         id: "1",
         protagonist: true,
         role: "Trainer",
-        name: "Jess",
-        emoji: "👩🏿",
+        name: "CamunDiaz",
+        emoji: "🧠",
       },
       {
         id: "2",
         protagonist: false,
         role: "Student",
-        name: "Wolfgang",
-        emoji: "🙋🏻‍♂️",
+        name: "GeneraLion",
+        emoji: "🦁",
       },
     ],
     difficulty: {
-      bpmn: 1,
+      bpmn: 2,
       dmn: 0,
       forms: 0,
     },
@@ -36,41 +37,30 @@ export const Group4: bpmnStory[] = [
           {
             position: 1,
             type: "narration",
-            text: "This is a BPMN story template for you to work with!",
+            text: "This story will be about BPMN embedded subprocesses - for further details on the topic, please refer to the BPMN Subprocesses course on the Camunda Academy!",
           },
           {
             position: 2,
             type: "message",
             participant: "1",
-            text: "This text is said by participant number 1. They were chosen to be the protagonist, placing the icon on the right side and speech bubble on the left side.",
+            text: "Hi there! Today's topic will be about BPMN subprocesses. Does anybody know, why do we use subprocesses?",
           },
           {
             position: 3,
-            type: "message",
-            participant: "2",
-            text: "This text is said by participant number 2. The icon and speech bubble are reversed.",
-          },
-          {
-            position: 4,
-            type: "narration",
-            text: "You can use the type narration to add additional context. You can use up to 4 different participants!",
-          },
-          {
-            position: 5,
             type: "question",
-            question: "This is a question?",
+            question: "... That was a question, duh!",
             answers: [
               {
                 keyword: "q1-incorrect-1",
-                text: "Each answer has a specific keyword which is used to progress in the story.",
+                text: "To make our life more complicated!",
               },
               {
                 keyword: "q1-incorrect-2",
-                text: 'The first two answers lead to "bad endings".',
+                text: 'To show that we can do that!',
               },
               {
                 keyword: "q1-correct-1",
-                text: "This is the correct answer.",
+                text: "To help us to modularize our process",
               },
             ],
           },
@@ -80,11 +70,11 @@ export const Group4: bpmnStory[] = [
         conditions: ["q1-incorrect-1"],
         messages: [
           {
-            position: 6,
+            position: 4,
             type: "ending",
             isGoodEnding: false,
-            title: "Wrong Answer",
-            text: "This is an example for a bad ending.",
+            title: "Wrong group",
+            text: "If you really think so, you should have chosen the complexity over quality task instead! See you next year!",
           },
         ],
       },
@@ -92,16 +82,11 @@ export const Group4: bpmnStory[] = [
         conditions: ["q1-incorrect-2"],
         messages: [
           {
-            position: 6,
-            type: "narration",
-            text: "We can also add conversation before our bad ending.",
-          },
-          {
-            position: 7,
+            position: 4,
             type: "ending",
             isGoodEnding: false,
-            title: "Different Title",
-            text: "This is another bad ending with a different title.",
+            title: "Mr Can Do",
+            text: "Just because we can do something, it does not mean that we should!",
           },
         ],
       },
@@ -109,34 +94,59 @@ export const Group4: bpmnStory[] = [
         conditions: ["q1-correct-1"],
         messages: [
           {
+            position: 4,
+            type: "message",
+            participant: "2",
+            text: "OK, modularization always makes sense - but can I somehow hide the details of this subprocess, in case I am not interested in it?",
+          },
+          {
+            position: 5,
+            type: "message",
+            participant: "1",
+            text: "Sure, you can! We can use the collapsed view to hide the details - this makes sense, if the user whom the model is shown is not interested in the low-level details.",
+          },
+          {
             position: 6,
-            type: "narration",
-            text: "You can create multiple threads and use keywords to let your story play out the way you want it to!",
+            type: "message",
+            participant: "2",
+            text: "OK, that was easy! But this process was very simple in the first place - could you show us a case where it makes more sense to use a subprocess?",
           },
           {
             position: 7,
             type: "message",
             participant: "1",
-            text: "Displaying BPMN, DMN and Forms has the same thread/keyword system.",
+            text: "Sure! What about this one? Can you see, why does it make sense, to use a subprocess here?",
           },
           {
             position: 8,
             type: "message",
             participant: "2",
-            text: "But don't make your story too complex! Using multiple threads that depend on different keywords is optional.",
+            text: "Uhm... It's about those funny circles on the border, right?",
           },
           {
             position: 9,
             type: "message",
             participant: "1",
-            text: "We made to the end of our demo story!",
+            text: "Correct! With subprocesses, we can define so-called boundary events - this way we can attach events to a specific scope! ",
           },
           {
             position: 10,
+            type: "message",
+            participant: "1",
+            text: "These boundary events can be either interrupting (indicated by solid lines, to abort the run of the subprocess) - or non-interrupting - indicated by dashed lines, in case our subprocess can run further.",
+          },
+          {
+            position: 11,
+            type: "message",
+            participant: "2",
+            text: "I think I'm getting the hang of it! Thanks for the explanation!",
+          },
+          {
+            position: 12,
             type: "ending",
             isGoodEnding: true,
             title: "The End",
-            text: "Have fun creating your own stories!",
+            text: "Have fun creating your own processes with subprocesses!",
           },
         ],
       },
@@ -147,15 +157,15 @@ export const Group4: bpmnStory[] = [
         files: [
           {
             position: 1,
-            fileNames: [dummyBpmnUrl],
+            fileNames: [subProcess1BpmnUrl],
           },
           {
-            position: 6,
-            fileNames: [dummyDmnUrl],
+            position: 5,
+            fileNames: [subProcess2BpmnUrl],
           },
           {
-            position: 8,
-            fileNames: [dummyFormUrl],
+            position: 7,
+            fileNames: [subProcess3BpmnUrl],
           },
         ],
       },
