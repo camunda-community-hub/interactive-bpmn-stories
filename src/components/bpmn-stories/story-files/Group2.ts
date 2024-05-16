@@ -7,12 +7,11 @@ import tripUrl from "/bpmn-stories/group2/Trip.bpmn?url";
 export const Group2: bpmnStory[] = [
   {
     id: "compensation",
-    title: "Group2 - Compensation Commando",
-    description: "Welcome to \"The Compensation Commando,\" where your BPMN expertise will be put to the test.\n" +
-        "\n" +
-        "Dive into a story where the compensation event is a pivotal challenge that can make or break the workflow. Navigate through an intricate process and marvel at its simplicity.\n" +
-        "\n" +
-        "Will you master the art of compensation and restore balance? Test your knowledge, sharpen your skills, and embrace the adventure. Are you ready to take on the challenge?",
+    title: "Compensation Commando",
+    description:
+      "Dive into a story where the compensation event is a pivotal challenge that can make or break the workflow. Navigate through an intricate process and marvel at its simplicity.\n" +
+      "\n" +
+      "Will you master the art of compensation and restore balance? Test your knowledge, sharpen your skills, and embrace the adventure.",
     participants: [
       {
         id: "1",
@@ -41,7 +40,7 @@ export const Group2: bpmnStory[] = [
       dmn: 0,
       forms: 0,
     },
-    tags: ["BPMN"],
+    tags: ["BPMN", "Compensation"],
     conversation: [
       {
         conditions: [],
@@ -67,7 +66,8 @@ export const Group2: bpmnStory[] = [
             position: 4,
             type: "question",
             participant: "1",
-            question: "I'd like you to extend the process. Once a person becomes sick, all the bookings need to be cancelled. How would you model that? Do you know the compensation event?",
+            question:
+              "I'd like you to extend the process. Once a person becomes sick, all the bookings need to be cancelled. How would you model that? Do you know the compensation event?",
             answers: [
               {
                 keyword: "q1-beginner",
@@ -122,7 +122,6 @@ export const Group2: bpmnStory[] = [
               },
             ],
           },
-          
         ],
       },
       {
@@ -135,7 +134,7 @@ export const Group2: bpmnStory[] = [
             title: "So messy",
             text: "No, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
           },
-        ]
+        ],
       },
       {
         conditions: ["q2-wrong2"],
@@ -147,7 +146,7 @@ export const Group2: bpmnStory[] = [
             title: "So messy",
             text: "No, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
           },
-        ]
+        ],
       },
       {
         conditions: ["q2-right"],
@@ -159,7 +158,7 @@ export const Group2: bpmnStory[] = [
             title: "Not so elegant",
             text: "Correct, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
           },
-        ]
+        ],
       },
       {
         conditions: ["q1-pro"],
@@ -240,7 +239,6 @@ export const Group2: bpmnStory[] = [
           },
         ],
       },
-      
     ],
   },
 ];

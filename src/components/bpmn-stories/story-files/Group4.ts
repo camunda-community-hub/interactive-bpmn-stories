@@ -2,12 +2,12 @@ import subProcess1BpmnUrl from "/bpmn-stories/group4/subprocess_1.bpmn?url";
 import subProcess2BpmnUrl from "/bpmn-stories/group4/subprocess_2.bpmn?url";
 import subProcess3BpmnUrl from "/bpmn-stories/group4/subprocess_3.bpmn?url";
 
-
 export const Group4: bpmnStory[] = [
   {
     id: "bpmn_subprocess_stories",
     title: "BPMN Embedded Subprocesses",
-    description: "This interactive tutorial is an interactive short story version of Camunda Academy's BPMN Subprocesses course - Embedded subprocesses part.",
+    description:
+      "This interactive tutorial is an interactive short story version of Camunda Academy's BPMN Subprocesses course - Embedded subprocesses part.",
     participants: [
       {
         id: "1",
@@ -29,7 +29,7 @@ export const Group4: bpmnStory[] = [
       dmn: 0,
       forms: 0,
     },
-    tags: ["BPMN"],
+    tags: ["BPMN", "Subprocess"],
     conversation: [
       {
         conditions: [],
@@ -56,7 +56,7 @@ export const Group4: bpmnStory[] = [
               },
               {
                 keyword: "q1-incorrect-2",
-                text: 'To show that we can do that!',
+                text: "To show that we can do that!",
               },
               {
                 keyword: "q1-correct-1",

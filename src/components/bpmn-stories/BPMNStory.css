@@ -31,10 +31,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: smaller;
 }
 
 .bpmn-stories-left-bottom-box h3 {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+.bpmn-stories-left-bottom-box p {
+  margin-top: 0.4rem;
 }
 
 .bpmn-stories-difficulty {

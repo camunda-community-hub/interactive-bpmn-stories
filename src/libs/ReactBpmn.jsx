@@ -50,7 +50,8 @@ export function ReactBpmn({ url }) {
 
       bpmnViewer.on("import.done", (event) => {
         bpmnViewer.get("canvas").zoom("fit-viewport");
-        bpmnViewer.get("zoomScroll").stepZoom(-0.2);
+        // bpmnViewer.get("zoomScroll").stepZoom(-0.1);
+        bpmnViewer.get("zoomScroll").scroll({ dx: 0, dy: 80 });
       });
     }
   }, [bpmnXML]);

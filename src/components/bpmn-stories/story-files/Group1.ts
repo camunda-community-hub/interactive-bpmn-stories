@@ -13,12 +13,12 @@ import finalT from "/bpmn-stories/group1/Final-tabs.bpmn?url";
 import final10 from "/bpmn-stories/group1/Final-x10-metAtBar.bpmn?url";
 import final from "/bpmn-stories/group1/Final.bpmn?url";
 
-
 export const Group1: bpmnStory[] = [
   {
     id: "WeKnowBPMN!",
     title: "A Never-Ending Date.",
-    description: "WeKnowBPMN! - Submission to CamundaCon 2024 hackdays. A story about a horrible date that could not be terminated.",
+    description:
+      "WeKnowBPMN! - Submission to CamundaCon 2024 hackdays. A story about a horrible date that could not be terminated.",
     participants: [
       {
         id: "1",
@@ -33,7 +33,7 @@ export const Group1: bpmnStory[] = [
         role: "BFF",
         name: "Charly",
         emoji: "👩🏽‍⚖️",
-      }
+      },
     ],
     difficulty: {
       bpmn: 3,
@@ -98,7 +98,7 @@ export const Group1: bpmnStory[] = [
               {
                 keyword: "q1-leave",
                 text: "Leave without the drink.",
-              }
+              },
             ],
           },
         ],
@@ -166,7 +166,7 @@ export const Group1: bpmnStory[] = [
               {
                 keyword: "q2-spaces",
                 text: "No, she uses spaces…",
-              }
+              },
             ],
           },
         ],
@@ -234,7 +234,7 @@ export const Group1: bpmnStory[] = [
               {
                 keyword: "q2-spaces",
                 text: "No, she uses spaces…",
-              }
+              },
             ],
           },
         ],
@@ -312,14 +312,6 @@ export const Group1: bpmnStory[] = [
             position: 15,
             fileNames: [final1],
           },
-          {
-            position: 19,
-            fileNames: [finalT],
-          },
-          {
-            position: 18,
-            fileNames: [finalS],
-          },
         ],
       },
       {
@@ -327,7 +319,7 @@ export const Group1: bpmnStory[] = [
         files: [
           {
             position: 18,
-            fileNames: [finalT],
+            fileNames: [finalT, final],
           },
         ],
       },
@@ -336,13 +328,10 @@ export const Group1: bpmnStory[] = [
         files: [
           {
             position: 18,
-            fileNames: [finalS],
+            fileNames: [finalS, final],
           },
         ],
       },
     ],
   },
 ];
-
-
-
