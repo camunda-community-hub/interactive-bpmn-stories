@@ -101,9 +101,6 @@
       <bpmn:incoming>Flow_069u10f</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_069u10f" sourceRef="Gateway_0kxexg2" targetRef="Event_0qytzp9" />
-    <bpmn:boundaryEvent id="Event_0zzi58q" attachedToRef="Activity_0jvhpxu">
-      <bpmn:compensateEventDefinition id="CompensateEventDefinition_19kjcdw" />
-    </bpmn:boundaryEvent>
   </bpmn:process>
   <bpmn:message id="Message_0d6h88q" name="CancelMessage">
     <bpmn:extensionElements>
@@ -190,9 +187,6 @@
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1443" y="145" width="75" height="14" />
         </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_10dmzfq_di" bpmnElement="Event_0zzi58q">
-        <dc:Bounds x="322" y="142" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_1fgtm0g" bpmnElement="Flow_02sm0pw">
         <di:waypoint x="195" y="120" />
