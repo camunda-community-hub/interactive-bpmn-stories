@@ -89,12 +89,68 @@ export const Group2: bpmnStory[] = [
           },
           {
             position: 7,
+            type: "message",
+            participant: "1",
+            text: "Hmm, a good start, but maybe not the best solution.",
+          },
+          {
+            position: 8,
+            type: "question",
+            participant: "1",
+            question: "Could you imagine why?",
+            answers: [
+              {
+                keyword: "q2-wrong1",
+                text: "It has syntatcical BPMN errors",
+              },
+              {
+                keyword: "q2-wrong2",
+                text: "It does not work correctly",
+              },
+              {
+                keyword: "q2-right",
+                text: "It works, but the model is overly complex",
+              },
+            ],
+          },
+          
+        ],
+      },
+      {
+        conditions: ["q2-wrong1"],
+        messages: [
+          {
+            position: 9,
             type: "ending",
             isGoodEnding: false,
             title: "So messy",
-            text: "I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
+            text: "No, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
           },
-        ],
+        ]
+      },
+      {
+        conditions: ["q2-wrong2"],
+        messages: [
+          {
+            position: 9,
+            type: "ending",
+            isGoodEnding: false,
+            title: "So messy",
+            text: "No, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
+          },
+        ]
+      },
+      {
+        conditions: ["q2-right"],
+        messages: [
+          {
+            position: 9,
+            type: "ending",
+            isGoodEnding: true,
+            title: "Not so elegant",
+            text: "Correct, I think it blows up our entire process model. I heard a colleague talk about compensations. Can you look them up and remodel the process?",
+          },
+        ]
       },
       {
         conditions: ["q1-pro"],
