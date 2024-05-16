@@ -101,15 +101,16 @@ export const Group2: bpmnStory[] = [
         messages: [
           {
             position: 5,
-            type: "narration",
-            text: "We can also add conversation before our bad ending.",
+            type: "message",
+            participant: "2",
+            text: "Here's the updated process model using compensation. Do you love it as much as I do?",
           },
           {
             position: 6,
             type: "ending",
-            isGoodEnding: false,
-            title: "Different Title",
-            text: "This is another bad ending with a different title.",
+            isGoodEnding: true,
+            title: "So compact!",
+            text: "I love the simplicity. Well done! I hope you learned something new :)",
           },
         ],
       },
