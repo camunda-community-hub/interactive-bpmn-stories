@@ -1,4 +1,4 @@
-import { CombinedStories } from "./story-files/CombinedStories";
+import { CombinedStories } from "../story-files/CombinedStories";
 import { useState } from "react";
 import RangeSlider from "react-range-slider-input";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import { StarRating } from "./StarRating";
 import QRCode from "react-qr-code";
 import "react-range-slider-input/dist/style.css";
 import "./BPMNStoriesHome.css";
-import CamundaConLogoWhite from "/icons/ccon-logo-white-2024.svg";
+import CamundaLogo from "/icons/black-C.png";
 
 export function BPMNStoriesHome() {
   var [bpmnDifficulty, setBpmnDifficulty] = useState([0, 5]);
@@ -85,7 +85,7 @@ export function BPMNStoriesHome() {
               marginBottom: "2rem",
             }}
           >
-            <img src={CamundaConLogoWhite} />
+            <img src={CamundaLogo} style={{ width: "90px" }} />
             <div
               style={{
                 display: "flex",

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1w0d6bu" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.15.2" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.2.0">
+  <decision id="Decision_1jdsj02" name="Assignment Escalated Case">
+    <decisionTable id="DecisionTable_0mfiphn" hitPolicy="FIRST">
+      <input id="Input_1" label="previously assigned?">
+        <inputExpression id="InputExpression_1" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0k34f3w" label="seniority level of previously assigned worker">
+        <inputExpression id="LiteralExpression_17i0kl2" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_10nwp5n" label="menior consultant available?">
+        <inputExpression id="LiteralExpression_1k9rdkr" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0cvd01e" label="senior consultant available?">
+        <inputExpression id="LiteralExpression_17re3g6" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0amdshd" label="principle consultant available?">
+        <inputExpression id="LiteralExpression_0s6z85v" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Assignment" typeRef="string" />
+      <rule id="DecisionRule_0i5yyws">
+        <inputEntry id="UnaryTests_0ic7vwk">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ewyqk4">
+          <text>"junior"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jq5cp5">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cqi7z4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x5ke5l">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0if54ex">
+          <text>availableMeniorConsultants[1]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_125uepb">
+        <inputEntry id="UnaryTests_176tjrk">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tjch4z">
+          <text>"junior", "menior"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hhnvoq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0epo3d9">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00us4aa">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02rrf9i">
+          <text>availableSeniorConsultants[1]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0lvqf1w">
+        <inputEntry id="UnaryTests_1lphmtf">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0prrpvx">
+          <text>"junior", "menior","senior"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cxhak0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j8mn2r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qlnzjg">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uubw48">
+          <text>availablePrincipalConsultants[1]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1d1xomi">
+        <inputEntry id="UnaryTests_1ykh7t5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o8wjdc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n1zo77">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03bvsre">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l3js7y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ig34vn">
+          <text>consultingManager</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_1jdsj02">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

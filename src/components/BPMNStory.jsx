@@ -1,6 +1,6 @@
-import { ReactBpmn } from "../../libs/ReactBpmn";
-import { ReactDmn } from "../../libs/ReactDmn";
-import { ReactForm } from "../../libs/ReactForm";
+import { ReactBpmn } from "../libs/ReactBpmn";
+import { ReactDmn } from "../libs/ReactDmn";
+import { ReactForm } from "../libs/ReactForm";
 import { useState, useRef, useEffect } from "react";
 import { Question } from "./Question";
 import { Message } from "./Message";

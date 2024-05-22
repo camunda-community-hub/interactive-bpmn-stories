@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { BPMNStory } from "./BPMNStory";
-import { CombinedStories } from "./story-files/CombinedStories";
+import { CombinedStories } from "../story-files/CombinedStories";
 
 export function Stories() {
   let { storyId } = useParams();

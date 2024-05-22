@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0jlgges" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.15.2" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.2.0">
+  <decision id="Decision_072kp0o" name="Regular Assignment">
+    <decisionTable id="DecisionTable_0p28i0j" hitPolicy="FIRST">
+      <input id="Input_1" label="Customer priority">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1xyuoha" label="senior consultant available?">
+        <inputExpression id="LiteralExpression_1riz87g" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_02h8wrd" label="principal consultant available?">
+        <inputExpression id="LiteralExpression_1aiyqlj" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Assignment" typeRef="string" />
+      <rule id="DecisionRule_1658onb">
+        <inputEntry id="UnaryTests_0h4fbuy">
+          <text>not("high")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1olfv7a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04gphhl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0q44je9">
+          <text>availableConsultants[1]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0h0qmmf">
+        <inputEntry id="UnaryTests_023jczc">
+          <text>"high"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ml5lfh">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i4odry">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13ymbeg">
+          <text>availableSeniorConsultants[1]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qxrzv4">
+        <inputEntry id="UnaryTests_1dg7m7t">
+          <text>"high"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x07cwv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y42iek">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0eh9bgm">
+          <text>availablePrincipalConsultants[1]</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ngpafp">
+        <inputEntry id="UnaryTests_0m97art">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16pjzng">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05pejsr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xga1cb">
+          <text>consultingMananager</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_072kp0o">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

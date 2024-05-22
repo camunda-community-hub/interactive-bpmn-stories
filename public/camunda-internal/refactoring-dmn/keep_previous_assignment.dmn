@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_08kraha" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.15.2" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.2.0">
+  <decision id="Decision_018a9zr" name="Keep Previous Assignment">
+    <decisionTable id="DecisionTable_07w818b" hitPolicy="FIRST">
+      <input id="Input_1" label="previously assigned?">
+        <inputExpression id="InputExpression_1" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1wu88vx" label="previous consultant available?">
+        <inputExpression id="LiteralExpression_0c6l3rh" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0mj2eyd" label="escalated?">
+        <inputExpression id="LiteralExpression_0d2rg84" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="keep previous assignment" typeRef="boolean" />
+      <rule id="DecisionRule_1k1xops">
+        <inputEntry id="UnaryTests_0nraszx">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0474xxn">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e272lf">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pgud31">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c8z5ih">
+        <inputEntry id="UnaryTests_0744b9o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hhj8nf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11dydth">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hgkeka">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_018a9zr">
+        <dc:Bounds height="80" width="180" x="450" y="370" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
